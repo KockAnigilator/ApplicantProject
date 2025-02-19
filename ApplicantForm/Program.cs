@@ -16,7 +16,12 @@ namespace ApplicantForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            // Инициализация базы данных
+            AdmissionCommitteeBackend.DatabaseHelper.InitializeDatabase();
+
+            // Запуск формы авторизации
+            Application.Run(new LoginForm());
         }
     }
 }

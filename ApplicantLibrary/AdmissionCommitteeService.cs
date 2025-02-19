@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using ApplicantLibrary;
 using System.Linq;
 
 namespace AdmissionCommitteeBackend
@@ -13,6 +12,47 @@ namespace AdmissionCommitteeBackend
     public class AdmissionCommitteeService
     {
         private const string ConnectionString = "Data Source=admission.db;Version=3;"; //Тут должен быть путь до базы данных с абитурентами
+
+        // Регистрация нового пользователя
+        public bool RegisterUser(string username, string password)
+        {
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+                string insertQuery = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password);";
+                using (var command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@Username", username);
+                    command.Parameters.AddWithValue("@Password", password); // В реальном приложении используйте хеширование пароля
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        return true;
+                    }
+                    catch (SQLiteException)
+                    {
+                        return false; // Пользователь с таким именем уже существует
+                    }
+                }
+            }
+        }
+
+        // Авторизация пользователя
+        public bool LoginUser(string username, string password)
+        {
+            using (var connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+                string selectQuery = "SELECT COUNT(*) FROM Users WHERE Username = @Username AND Password = @Password;";
+                using (var command = new SQLiteCommand(selectQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@Username", username);
+                    command.Parameters.AddWithValue("@Password", password);
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+        }
 
         // Добавление абитуриента
         public void AddApplicant(Applicant applicant)
