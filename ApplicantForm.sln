@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicantForm", "ApplicantForm\ApplicantForm.csproj", "{DBFAFD20-C5EC-42A5-B446-CAD3A45DEB53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicantLibrary", "ApplicantLibrary\ApplicantLibrary.csproj", "{632B01EA-B133-4B92-8494-CBC7925CD982}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdmissionCommitteeBackend", "ApplicantLibrary\AdmissionCommitteeBackend.csproj", "{632B01EA-B133-4B92-8494-CBC7925CD982}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
