@@ -53,5 +53,10 @@ namespace ApplicantForm
                 MessageBox.Show("Пользователь с таким именем уже существует.");
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

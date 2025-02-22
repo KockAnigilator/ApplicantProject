@@ -24,8 +24,14 @@ namespace ApplicantForm
 
         private void LoadRanking()
         {
+            // Получаем данные из базы данных
             var ranking = _service.GetApplicantsRanking();
+
+            // Привязываем данные к DataGridView
             dataGridView.DataSource = ranking;
+
+            // Автоматически создаем столбцы на основе свойств объекта
+            dataGridView.AutoGenerateColumns = true;
         }
     }
 }
