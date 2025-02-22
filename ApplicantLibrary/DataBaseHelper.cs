@@ -4,7 +4,7 @@ namespace AdmissionCommitteeBackend
 {
     public class DatabaseHelper
     {
-        private const string ConnectionString = "Data Source=admission.db;Version=3;"; //Тут должна быть ссылка на базу данных
+        private const string ConnectionString = "C:\\Users\\Дмитрий\\Documents\\GitHub\\ApplicantProject\\ApplicantLibrary\\Базы данных\\ApplicantDB.sqbpro"; //Тут должна быть ссылка на базу данных
 
         public static void InitializeDatabase()
         {
@@ -18,7 +18,6 @@ namespace AdmissionCommitteeBackend
                         Email TEXT NOT NULL,
                         Phone TEXT NOT NULL,
                         ExamScore INTEGER NOT NULL,
-                        Documents TEXT,
                         Benefits TEXT
                     );";
                 using (var command = new SQLiteCommand(createTableQuery, connection))
