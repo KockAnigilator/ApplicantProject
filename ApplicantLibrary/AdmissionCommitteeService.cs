@@ -69,7 +69,6 @@ namespace AdmissionCommitteeBackend
                     command.Parameters.AddWithValue("@Email", applicant.Email);
                     command.Parameters.AddWithValue("@Phone", applicant.Phone);
                     command.Parameters.AddWithValue("@ExamScore", applicant.ExamScore);
-                    command.Parameters.AddWithValue("@Documents", applicant.Documents);
                     command.Parameters.AddWithValue("@Benefits", applicant.Benefits);
                     command.ExecuteNonQuery();
                 }
@@ -96,7 +95,6 @@ namespace AdmissionCommitteeBackend
                             Email = reader.GetString(2),
                             Phone = reader.GetString(3),
                             ExamScore = reader.GetInt32(4),
-                            Documents = reader.GetString(5),
                             Benefits = reader.GetString(6)
                         });
                     }
@@ -149,7 +147,6 @@ namespace AdmissionCommitteeBackend
                                 Email = reader.GetString(2),
                                 Phone = reader.GetString(3),
                                 ExamScore = reader.GetInt32(4),
-                                Documents = reader.GetString(5),
                                 Benefits = reader.GetString(6)
                             });
                         }

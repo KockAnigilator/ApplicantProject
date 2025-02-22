@@ -35,7 +35,6 @@ namespace ApplicantForm
                 Email = txtEmail.Text,
                 Phone = txtPhone.Text,
                 ExamScore = int.Parse(txtExamScore.Text),
-                Documents = txtDocuments.Text,
                 Benefits = txtBenefits.Text
             };
 

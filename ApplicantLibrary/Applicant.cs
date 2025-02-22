@@ -13,7 +13,6 @@ namespace AdmissionCommitteeBackend
         public string Email { get; set; } // Электронная почта
         public string Phone { get; set; } // Телефон
         public int ExamScore { get; set; } // Баллы ЕГЭ
-        public string Documents { get; set; } // Документы (путь к файлу или текст)
         public string Benefits { get; set; } // Льготы (опционально)
     }
 }
