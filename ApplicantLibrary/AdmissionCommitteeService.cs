@@ -11,29 +11,42 @@ namespace AdmissionCommitteeBackend
     /// </summary>
     public class AdmissionCommitteeService
     {
-        private const string ConnectionString = "Data Source = C:\\Users\\Дмитрий\\Documents\\GitHub\\ApplicantProject\\ApplicantLibrary\\Базы данных\\ApplicantDB.db; Version=3;"; //Тут должен быть путь до базы данных с абитурентами
+        private const string ConnectionString = "Data Source = C:\\Users\\Дмитрий\\Documents\\GitHub\\ApplicantProject\\ApplicantLibrary\\Database\\ApplicantDB.db; Version=3;"; //Тут должен быть путь до базы данных с абитурентами
 
         // Регистрация нового пользователя
         public bool RegisterUser(string username, string password)
         {
-            using (var connection = new SQLiteConnection(ConnectionString))
+            try
             {
-                connection.Open();
-                string insertQuery = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password);";
-                using (var command = new SQLiteCommand(insertQuery, connection))
+                using (var connection = new SQLiteConnection(ConnectionString))
                 {
-                    command.Parameters.AddWithValue("@Username", username);
-                    command.Parameters.AddWithValue("@Password", password); // В реальном приложении используйте хеширование пароля
-                    try
+                    connection.Open();
+                    string insertQuery = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password);";
+                    using (var command = new SQLiteCommand(insertQuery, connection))
                     {
-                        command.ExecuteNonQuery();
-                        return true;
-                    }
-                    catch (SQLiteException)
-                    {
-                        return false; // Пользователь с таким именем уже существует
+                        command.Parameters.AddWithValue("@Username", username);
+                        command.Parameters.AddWithValue("@Password", password); // В реальном приложении используйте хеширование пароля
+                        try
+                        {
+                            command.ExecuteNonQuery();
+                            return true;
+                        }
+                        catch (SQLiteException)
+                        {
+                            return false; // Пользователь с таким именем уже существует
+                        }
                     }
                 }
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine($"Ошибка SQLite: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка: {ex.Message}");
+                return false;
             }
         }
 

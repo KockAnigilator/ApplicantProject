@@ -58,5 +58,38 @@ namespace ApplicantForm
         {
 
         }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+
+            if (_service.LoginUser(username, password))
+            {
+                MessageBox.Show("Авторизация успешна!");
+                this.Hide();
+                var mainForm = new MainForm();
+                mainForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Неверный логин или пароль.");
+            }
+        }
+
+        private void btnRegister_Click_1(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+
+            if (_service.RegisterUser(username, password))
+            {
+                MessageBox.Show("Регистрация успешна!");
+            }
+            else
+            {
+                MessageBox.Show("Пользователь с таким именем уже существует.");
+            }
+        }
     }
 }

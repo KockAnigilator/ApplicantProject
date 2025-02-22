@@ -86,6 +86,7 @@
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Войти";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
             // btnRegister
             // 
@@ -95,6 +96,7 @@
             this.btnRegister.TabIndex = 5;
             this.btnRegister.Text = "Зарегистрироваться";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click_1);
             // 
             // LoginForm
             // 
