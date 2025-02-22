@@ -11,7 +11,7 @@ namespace AdmissionCommitteeBackend
     /// </summary>
     public class AdmissionCommitteeService
     {
-        private const string ConnectionString = "C:\\Users\\Дмитрий\\Documents\\GitHub\\ApplicantProject\\ApplicantLibrary\\Базы данных\\ApplicantDB.db"; //Тут должен быть путь до базы данных с абитурентами
+        private const string ConnectionString = "Data Source = C:\\Users\\Дмитрий\\Documents\\GitHub\\ApplicantProject\\ApplicantLibrary\\Базы данных\\ApplicantDB.db; Version=3;"; //Тут должен быть путь до базы данных с абитурентами
 
         // Регистрация нового пользователя
         public bool RegisterUser(string username, string password)
