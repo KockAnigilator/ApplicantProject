@@ -17,8 +17,8 @@ namespace ApplicantForm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Инициализация базы данных
-            AdmissionCommitteeBackend.DatabaseHelper.InitializeDatabase();
+            //// Инициализация базы данных
+            //AdmissionCommitteeBackend.DatabaseHelper.InitializeDatabase();
 
             // Запуск формы авторизации
             Application.Run(new LoginForm());
