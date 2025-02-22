@@ -67,9 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Database\ApplicantDB.db" />
+    <None Include="Database\ApplicantDB.sqbpro" />
     <None Include="packages.config" />
-    <None Include="Базы данных\ApplicantDB.db" />
-    <None Include="Базы данных\ApplicantDB.sqbpro" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
