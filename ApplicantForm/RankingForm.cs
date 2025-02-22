@@ -22,6 +22,11 @@ namespace ApplicantForm
             LoadRanking();
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Закрываем текущую форму
+        }
+
         private void LoadRanking()
         {
             // Получаем данные из базы данных

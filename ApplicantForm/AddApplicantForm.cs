@@ -43,6 +43,10 @@ namespace ApplicantForm
             this.Close();
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Закрываем текущую форму
+        }
         private void label3_Click(object sender, EventArgs e)
         {
 
